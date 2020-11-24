@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+
+* {
+  box-sizing: border-box;
+}
+	table{
+		margin:0 auto;
+	}
+	input[type="button"] 
+         { 
+         background-color:green; 
+         color: black; 
+         border: solid black 2px; 
+         width:100% ;
+         } 
+         input[type="text"] 
+         { 
+         background-color:white; 
+         border: solid black 2px; 
+         width:100% ;
+         } 
+         body{
+         	margin-top: 200px;
+          background: #F6F6F6;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+}
+button{
+font-size: 100px;
+}
+</style>
+	
+<body>
+
+<table style="border:5px solid orange; border-radius: 10px; padding-top: 20px; padding-bottom:15px;">
+	
+	<tr rowspan="2"><td colspan="4"><input type="text" placeholder="calculate Here" id="edu"/></td></tr>
+
+	<tr style="font-size: 20px;width:600px;">
+		<td colspan="2"><input type="button" value="M" name="" onclick="modul()"></td>
+		
+		<td colspan="2"><input type="button" value="clr"  onclick="clr()" id="edu"/></td>
+		
+	</tr>
+	
+	<tr style="font-size: 20px;width:600px;">
+		<td><input type="button" value="1" name="" onclick="dis('1')"></td>
+		<td><input type="button" value="2" name="" onclick="dis('2')"></td>
+		<td><input type="button" value="3" name="" onclick="dis('3')"></td>
+		<td><input type="button" value="/" name="" onclick="dis('/')"> </td>
+	</tr>
+	
+	<tr  style="font-size: 20px;width:600px;">
+		<td><input type="button" value="4" name="" onclick="dis('4')"> </td>
+		<td><input type="button" value="5" name="" onclick="dis('5')"></td>
+		<td><input type="button" value="6" name="" onclick="dis('6')"></td>
+		<td><input type="button" value="-" name="" onclick="dis('-')"></td>
+	</tr>
+	
+	<tr  style="font-size: 20px;width:600px;">
+		<td><input type="button" value="7" name="" onclick="dis('7')"></td>
+		<td><input type="button" value="8" name="" onclick="dis('8')"></td>
+		<td><input type="button" value="9" name="" onclick="dis('9')"></td>
+		<td><input type="button" value="+" name="" onclick="dis('+')"></td>
+	</tr>
+	
+	<tr  style="font-size: 20px;width:600px;">
+		<td><input type="button" value="0" name="" onclick="dis('0')"></td>
+		<td><input type="button" value="." name="" onclick="dis('.')"></td>
+		<td><input type="button" value="=" id="edu" onclick= 'solve()'></td>
+		<td><input type="button" value="*" name="" onclick="dis('*')"></td>
+	</tr>
+	
+	
+
+</table>
+<script>
+
+function dis(val){
+
+if(val=='+'|| val=='/'|| val=='*'|| val=='-')
+{
+
+let x = document.getElementById("edu").value;
+let y = eval(x)
+document.getElementById("edu").value = y+val;
+}
+else
+
+	document.getElementById("edu").value+=val
+
+}
+//function for displaying values
+
+
+function clr()
+{
+document.getElementById("edu").value = ""
+}
+function solve()
+{
+let x = document.getElementById("edu").value
+let y = eval(x)
+document.getElementById("edu").value = y
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
